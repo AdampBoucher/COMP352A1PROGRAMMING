@@ -14,7 +14,7 @@ public class FileReader {
 
         fileName = file;
         try {
-            inputStream = new FileInputStream("/Users/adamboucher/IntelliJ-Workspace/COMP352A1PROGRAMMING/" + file);
+            inputStream = new FileInputStream(file);
         }
         catch (FileNotFoundException e) {
             System.out.println(e);
@@ -49,7 +49,7 @@ public class FileReader {
     public Reservations returnFullArrays(){
 
         try {
-            inputStream = new FileInputStream("/Users/adamboucher/IntelliJ-Workspace/COMP352A1PROGRAMMING/" + fileName);
+            inputStream = new FileInputStream(fileName);
         }
         catch (FileNotFoundException e) {
             System.out.println(e);

@@ -6,7 +6,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ReservationGenerator generator = new ReservationGenerator(10000);
+        ReservationGenerator generator = new ReservationGenerator(5000);
 
         FileReader reader = new FileReader("Reservations.txt");
 
