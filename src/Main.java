@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ReservationGenerator generator = new ReservationGenerator(1000);
+        ReservationGenerator generator = new ReservationGenerator(1000000);
 
         FileReader reader = new FileReader("Reservations.txt");
 
@@ -85,6 +85,16 @@ public class Main {
                         String tempDate = rDate[i];
                         rDate[i] = rDate[j];
                         rDate[j] = tempDate;
+
+                        // Swap Slots
+                        int tempSlot = rSlot[i];
+                        rSlot[i] = rSlot[j];
+                        rSlot[j] = tempSlot;
+
+                        // Swap Medicares
+                        String tempMedicare = rMedicare[i];
+                        rMedicare[i] = rMedicare[j];
+                        rMedicare[j] = tempMedicare;
                     }
                 }
                 // Swap Dates
@@ -94,8 +104,8 @@ public class Main {
 
                 // Swap Slots
                 int tempSlot = rSlot[i + 1];
-                rDate[i + 1] = rDate[high];
-                rDate[high] = tempDate;
+                rSlot[i + 1] = rSlot[high];
+                rSlot[high] = tempSlot;
                 // Swap Medicares
                 String tempMedicare = rMedicare[i + 1];
                 rMedicare[i + 1] = rMedicare[high];
