@@ -5,7 +5,6 @@ import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 
 
-
 public class ReservationGenerator {
 
     private int size;
@@ -36,7 +35,7 @@ public class ReservationGenerator {
         String[] dates = new String[size];
 
         for (int i = 0; i < size; i++) {
-            int year = ThreadLocalRandom.current().nextInt(2021, 2025);
+            int year = ThreadLocalRandom.current().nextInt(2021, 2100);
             int month = ThreadLocalRandom.current().nextInt(1, 13);
             int day = ThreadLocalRandom.current().nextInt(1, 30);
 

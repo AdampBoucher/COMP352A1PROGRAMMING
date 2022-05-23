@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        ReservationGenerator generator = new ReservationGenerator(1000);
+        ReservationGenerator generator = new ReservationGenerator(10000);
 
         FileReader reader = new FileReader("Reservations.txt");
 
@@ -78,7 +78,7 @@ public class Main {
                 int i = (low - 1);
                 for (int j = low; j <= high - 1; j++) {
                     // If current element is smaller than the pivot
-                    if (rDate[j].compareTo(pivot) > 0) {
+                    if (rDate[j].compareTo(pivot) < 0) {
                         // Increment index of smaller element
                         i++;
                         // Swap smaller with bigger
@@ -94,8 +94,8 @@ public class Main {
 
                 // Swap Slots
                 int tempSlot = rSlot[i + 1];
-                rDate[i + 1] = rDate[high];
-                rDate[high] = tempDate;
+                rSlot[i + 1] = rSlot[high];
+                rSlot[high] = tempSlot;
                 // Swap Medicares
                 String tempMedicare = rMedicare[i + 1];
                 rMedicare[i + 1] = rMedicare[high];
@@ -119,7 +119,6 @@ public class Main {
 
         boolean sorted;
         int activeReservations = 0;
-        // Count Active Reservations and return TODO: Add this step to previous loop
         for (int i = 0; i < rDate.length; i++) {
             if (rDate[i].compareTo(currentDate) > 0) {
                 activeReservations++;
