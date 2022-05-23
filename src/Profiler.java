@@ -21,7 +21,7 @@ public class Profiler {
        endTime = System.nanoTime();
        totalTime = endTime - startTime;
 
-       System.out.println("The function " + functionName + " took: " + totalTime);
+       System.out.println("The function " + functionName + " took: " + totalTime/1000000 + "ms");
 
     }
 }
